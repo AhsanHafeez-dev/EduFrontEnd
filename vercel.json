@@ -20,7 +20,7 @@
       }
     ],
     "env": {
-      "MY_API_URL": "@my-api-url",
+      "MY_API_URL": "@MY_API_URL",
       "NEXT_PUBLIC_ANALYTICS_ID": "@next-public-analytics-id"
     }
   }
