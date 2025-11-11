@@ -1,6 +1,7 @@
 // pages/test.js
 "use client";
 import { useRouter } from "next/navigation";
+export const dynamic = "force-dynamic";
 
 export default function TestPage() {
   const router = useRouter();

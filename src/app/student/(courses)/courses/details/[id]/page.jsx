@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 
 // import VideoPlayer from "@/components/shared/VideoPlayer";
 // import Wrapper from "@/components/shared/wrapper";
