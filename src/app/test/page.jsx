@@ -1,11 +1,8 @@
 // src/app/test/page.jsx
-export const dynamic = "force-dynamic"; // server-side dynamic
+export const dynamic = "force-dynamic"; // ensures server-side render on every request
+
+import TestPageClient from "@/components/test/TestPageClient";
 
 export default function TestPage() {
-  return (
-    <div>
-      <h1>Test Page (Dynamic SSR)</h1>
-      <a href="/">Go Home</a>
-    </div>
-  );
+  return <TestPageClient />;
 }
