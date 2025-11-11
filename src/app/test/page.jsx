@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 
 export default function TestPage() {
   const router = useRouter();
+  console.log("test page added");
   return (
     <div>
       <h1>Test Page</h1>
