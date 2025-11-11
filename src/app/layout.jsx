@@ -1,12 +1,9 @@
-"use client";
-
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
 import AuthProvider from "@/context/auth-context";
 import InstructorContext from "@/context/instructor-context";
 import StudentProvider from "@/context/student-context";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import RouteGuard from "../components/common-form/Route-guard";
-import { useAuthContext } from "../context/auth-context";
+import ProtectedLayout from "./ProtectedLayout"; // move to a separate file
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,20 +15,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-function ProtectedLayout({ children }) {
-  const { auth } = useAuthContext();
+export const metadata = {
+  title: "Edu Platform",
+  description: "Dynamic Next.js app",
+};
 
-  return (
-    <RouteGuard 
-      authenticated={auth?.authenticate} 
-      user={auth?.role}
-    >
-      {children}
-    </RouteGuard>
-  );
-}
-
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body
@@ -40,9 +29,7 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <InstructorContext>
             <StudentProvider>
-              <ProtectedLayout>
-                {children}
-              </ProtectedLayout>
+              <ProtectedLayout>{children}</ProtectedLayout>
             </StudentProvider>
           </InstructorContext>
         </AuthProvider>
