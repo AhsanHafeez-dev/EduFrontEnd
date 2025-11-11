@@ -1,7 +1,10 @@
 // pages/test.js
 "use client";
-import { useRouter } from "next/navigation";
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
+import { useRouter } from "next/navigation";
+
 
 export default function TestPage() {
   const router = useRouter();
