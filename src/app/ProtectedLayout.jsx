@@ -1,7 +1,6 @@
 "use client";
-
-import { useAuthContext } from "@/context/auth-context";
 import RouteGuard from "@/components/common-form/Route-guard";
+import { useAuthContext } from "@/context/auth-context";
 
 export default function ProtectedLayout({ children }) {
   const { auth } = useAuthContext();
