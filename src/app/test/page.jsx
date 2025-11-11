@@ -1,5 +1,5 @@
-// src/app/test/page.jsx
-export const dynamic = "force-dynamic"; // ensures server-side render on every request
+// Server Component → handles dynamic SSR
+export const dynamic = "force-dynamic"; // forces server rendering on every request
 
 import TestPageClient from "@/components/test/TestPageClient";
 
